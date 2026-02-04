@@ -1,111 +1,336 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Healthy Sleep Information</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Better Sleep, Simplified | Evidence-Informed Habits</title>
 
-  <!-- SEO básico e seguro para Google Ads -->
-  <meta name="description" content="Informational content about healthy sleep habits and daily routines that may support overall well-being.">
-  <meta name="robots" content="index, follow">
+  <meta name="description" content="A practical, evidence-informed guide to sleep quality: routines, environment, and simple habits you can try. Educational purposes only." />
+  <meta name="robots" content="index, follow" />
 
   <style>
-    body {
+    :root{
+      --bg:#f5f7fa;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --soft:#eef2ff;
+      --soft2:#ecfeff;
+      --accent:#1a73e8;
+      --accent2:#1558b0;
+      --dark:#0b1220;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #f5f7fa;
-      margin: 0;
-      padding: 0;
-      color: #333;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+    a{color:inherit}
+    .wrap{
+      max-width: 980px;
+      margin: 26px auto;
+      padding: 0 16px 44px;
+    }
+    header{
+      border-radius: 16px;
+      padding: 28px 22px;
+      background: linear-gradient(135deg, #0f172a, #111827);
+      color:#fff;
+      box-shadow: 0 12px 26px rgba(0,0,0,.10);
+    }
+    .badge{
+      display:inline-block;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.2px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    header h1{
+      margin:0 0 10px;
+      font-size: 30px;
+      letter-spacing: .2px;
+    }
+    header p{
+      margin:0;
+      color: rgba(255,255,255,.86);
+      font-size: 15.5px;
+      max-width: 78ch;
     }
 
-    .container {
-      max-width: 720px;
-      margin: 40px auto;
-      background: #ffffff;
-      padding: 32px;
+    .grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns: 1fr}
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(17,24,39,.06);
+    }
+    h2{margin:0 0 10px;font-size: 20px;}
+    h3{margin:18px 0 6px;font-size:16px;}
+    p{margin:0 0 12px;color: #1f2937;}
+    .muted{color:var(--muted);font-size:14px;}
+    ul{margin:10px 0 14px 18px;padding:0;}
+    li{margin:6px 0;color:#1f2937;}
+
+    .callout{
+      background: var(--soft);
+      border: 1px solid #dbeafe;
+      border-radius: 14px;
+      padding: 14px;
+      margin: 12px 0;
+    }
+    .callout strong{display:block;margin-bottom:6px}
+
+    .warning{
+      background:#fff7ed;
+      border:1px solid #fed7aa;
+      border-radius:14px;
+      padding: 12px 14px;
+      color:#7c2d12;
+      font-size:14px;
+      margin-top: 12px;
+    }
+
+    .divider{
+      height:1px;
+      background:var(--line);
+      margin: 16px 0;
+    }
+
+    .chips{margin-top:8px}
+    .chip{
+      display:inline-block;
+      font-size:12px;
+      padding: 5px 9px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#fff;
+      color:var(--muted);
+      margin: 6px 6px 0 0;
+    }
+
+    .sidebarBox{
+      background: var(--soft2);
+      border: 1px solid #cffafe;
+      border-radius: 14px;
+      padding: 14px;
+      margin-top: 12px;
+    }
+
+    .cta{
+      background: var(--dark);
+      color:#fff;
+      border-radius: 16px;
+      padding: 24px 22px;
+      margin-top: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .cta h2{margin:0 0 8px}
+    .cta p{color:rgba(255,255,255,.86)}
+    .btn{
+      display:inline-block;
+      margin-top: 12px;
+      padding: 14px 20px;
+      background: var(--accent);
+      color:#fff;
+      text-decoration:none;
+      font-weight: 900;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform .08s ease, background-color .2s ease;
     }
-
-    h1 {
-      font-size: 28px;
-      margin-bottom: 16px;
-      color: #111;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 24px 0;
-      padding: 14px 22px;
-      background-color: #1a73e8;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 6px;
-      transition: background-color 0.2s ease;
-    }
-
-    .btn:hover {
-      background-color: #1558b0;
-    }
-
-    .disclaimer {
-      font-size: 13px;
-      color: #666;
-      margin-top: 24px;
+    .btn:hover{background:var(--accent2); transform: translateY(-1px);}
+    .btn:active{transform: translateY(0);}
+    .small{
+      font-size: 12.5px;
+      color: rgba(255,255,255,.72);
+      margin-top: 10px;
       line-height: 1.5;
     }
 
-    footer {
-      margin-top: 32px;
+    footer{
+      margin-top: 18px;
+      text-align:center;
       font-size: 12px;
-      color: #777;
-      border-top: 1px solid #e0e0e0;
-      padding-top: 16px;
+      color: var(--muted);
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Healthy Sleep Information</h1>
+  <div class="wrap">
 
-    <p>
-      Sleep plays an important role in overall health and daily well-being.
-      Establishing healthy sleep habits may support better focus, mood,
-      and quality of life.
-    </p>
+    <header>
+      <div class="badge">Educational • Not medical advice</div>
+      <h1>Better Sleep, Simplified</h1>
+      <p>
+        If your nights feel inconsistent, you’re not alone. Sleep is influenced by routine, stress, light exposure,
+        and daily habits. This guide shares practical, evidence-informed steps you can try—without hype or promises.
+      </p>
+    </header>
 
-    <p>
-      This page is for informational and educational purposes only and does not
-      provide medical advice. Individual results may vary depending on lifestyle
-      and health conditions.
-    </p>
+    <div class="grid">
+      <main class="card">
+        <h2>Start here: what “good sleep” usually means</h2>
+        <p>
+          Most adults do best with a consistent schedule, a calmer pre-bed routine, and a sleep-friendly environment.
+          Improvements often come from small changes repeated consistently over time.
+        </p>
 
-    <!-- BOTÃO COM LINK REAL DO CLICKBANK -->
-    <a class="btn"
-       href="https://b5b975511iru-y65rg2j3y-j2j.hop.clickbank.net/?traffic_source=google&traffic_type=search&campaign=canada_sleep&creative=ad1&ad=headline1"
-       target="_blank"
-       rel="noopener noreferrer">
-       Visit the official website
-    </a>
+        <div class="callout">
+          <strong>2-minute self-check (quick and helpful)</strong>
+          <ul>
+            <li>Do you wake up at roughly the same time most days?</li>
+            <li>Do you use bright screens close to bedtime?</li>
+            <li>Is your room darker and cooler at night?</li>
+            <li>Do worries or planning keep your mind active in bed?</li>
+          </ul>
+          <p class="muted">No judgment—this just helps you pick one change that’s easiest to start with.</p>
+        </div>
 
-    <div class="disclaimer">
-      Affiliate disclosure: This page may contain affiliate links.
-      If you choose to visit an external website through this link,
-      the site owner may receive a commission at no additional cost to you.
+        <h2>Five habits that may support better sleep quality</h2>
+
+        <h3>1) Keep a consistent wake-up time</h3>
+        <p>
+          If you only change one thing, start here. A stable wake-up time helps regulate your internal rhythm.
+          If you need to shift your schedule, do it gradually (15–30 minutes at a time).
+        </p>
+
+        <h3>2) Create a simple wind-down routine (15–30 minutes)</h3>
+        <p>
+          Your goal is to reduce stimulation. Pick 2–3 relaxing steps you can repeat nightly.
+        </p>
+        <ul>
+          <li>Dim lights and lower screen brightness.</li>
+          <li>Try a calm activity (reading, stretching, breathing).</li>
+          <li>Keep intense or stressful content for earlier in the day.</li>
+        </ul>
+
+        <h3>3) Make the bedroom more “sleep-friendly”</h3>
+        <p>
+          You don’t need a perfect setup—small improvements help. Darker, quieter, and slightly cooler tends to work well for many people.
+        </p>
+        <div class="chips">
+          <span class="chip">Darker room</span>
+          <span class="chip">Cooler temperature</span>
+          <span class="chip">Less noise</span>
+          <span class="chip">Comfortable bedding</span>
+        </div>
+
+        <h3>4) Watch caffeine timing</h3>
+        <p>
+          Sensitivity varies. If you struggle at night, consider limiting caffeine later in the day and track whether it helps.
+        </p>
+
+        <h3>5) If you can’t sleep, avoid “fighting the bed”</h3>
+        <p>
+          If you’re awake for a long time, try getting up briefly for a calm activity in low light, then return to bed when sleepy.
+          This can reduce frustration and help reset your association with the bed.
+        </p>
+
+        <div class="warning">
+          <strong>When to consider professional help:</strong> If sleep problems are persistent, severe, or come with symptoms like loud snoring,
+          breathing pauses, or significant daytime sleepiness, consider speaking with a qualified healthcare professional.
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>A gentle 7-day reset plan</h2>
+        <p class="muted">Simple structure. Realistic steps. Focus on consistency rather than perfection.</p>
+        <ul>
+          <li><strong>Days 1–2:</strong> Fix your wake-up time + get morning light.</li>
+          <li><strong>Days 3–4:</strong> Add a 15-minute wind-down routine.</li>
+          <li><strong>Day 5:</strong> Adjust caffeine timing (if relevant).</li>
+          <li><strong>Day 6:</strong> Improve one environment factor (dark, cool, quiet).</li>
+          <li><strong>Day 7:</strong> Keep the easiest habits and drop the rest.</li>
+        </ul>
+
+        <h2>FAQ (quick)</h2>
+        <h3>How fast do changes happen?</h3>
+        <p>Some people notice small improvements quickly; for others it can take a few weeks of consistent habits.</p>
+
+        <h3>Is it okay to nap?</h3>
+        <p>Naps help some people, but long or late naps can make nights harder. If naps disrupt you, shorten or move them earlier.</p>
+
+        <h3>What if stress keeps me awake?</h3>
+        <p>Stress is common. A wind-down routine, journaling, or guided relaxation may help. For ongoing issues, professional support can help too.</p>
+
+        <p class="muted">
+          Educational content only. This page does not diagnose, treat, cure, or prevent any condition.
+        </p>
+      </main>
+
+      <aside class="card">
+        <h2>Try this tonight (quick wins)</h2>
+        <ul>
+          <li>Lower lights one hour before bed.</li>
+          <li>Put your phone on “Do Not Disturb”.</li>
+          <li>Write tomorrow’s to-do list (2 minutes).</li>
+          <li>Use a steady background sound if noise is an issue.</li>
+        </ul>
+
+        <div class="sidebarBox">
+          <h3 style="margin-top:0">Small tracking idea</h3>
+          <p class="muted">
+            Track just three things for 7 days:
+          </p>
+          <ul>
+            <li>Wake-up time</li>
+            <li>Total sleep time (rough estimate)</li>
+            <li>Morning energy (1–10)</li>
+          </ul>
+          <p class="muted">This can help you see what’s actually working for you.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Transparency</h2>
+        <p class="muted">
+          Some links on this page may be affiliate links. If you choose to visit an external website through these links,
+          the site owner may earn a commission at no additional cost to you.
+        </p>
+      </aside>
     </div>
 
+    <section class="cta" aria-label="Learn more">
+      <h2>Want a more structured approach?</h2>
+      <p>
+        Some people prefer to follow a step-by-step method rather than guessing which habit matters most.
+        If you’d like to learn more about one available option, you can review the official website below.
+      </p>
+
+      <a class="btn"
+         href="https://b5b975511iru-y65rg2j3y-j2j.hop.clickbank.net/?traffic_source=google&traffic_type=search&campaign=canada_sleep&creative=ad1&ad=headline1"
+         target="_blank"
+         rel="noopener noreferrer">
+        View the official website
+      </a>
+
+      <div class="small">
+        Affiliate disclosure: This page may contain affiliate links. If you choose to visit an external website through this link,
+        the site owner may receive a commission at no additional cost to you.
+      </div>
+    </section>
+
     <footer>
-      © 2026 — Informational website about healthy sleep habits.
+      © 2026 — Better Sleep, Simplified. Educational content only.
     </footer>
+
   </div>
 </body>
 </html>
